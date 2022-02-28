@@ -45,3 +45,9 @@ Label encoder to convert classification into multiass binary
 from sklearn.preprocessing import LabelEncoder
 label_encoder = LabelEncoder()
 y = label_encoder.fit_transform(y)
+
+# code for lable encoder
+df_final['Airline']=labelencoder.fit_transform(df_final['Airline'])
+df_final['Source']=labelencoder.fit_transform(df_final['Source'])
+df_final['Destination']=labelencoder.fit_transform(df_final['Destination'])
+df_final['Additional_Info']=labelencoder.fit_transform(df_final['Additional_Info'])
