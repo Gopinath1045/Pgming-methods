@@ -29,3 +29,10 @@ from sklearn.metrics import confusion_matrix cf = confusion_matrix(y_test, y_pre
 
 REPLECE TO INT VALUES
 df['Fuel_Type']=df['Fuel_Type'].map({'Petrol':0,'Diesel':1,'CNG':2})
+
+COVNVERT TO TEXT
+# create a TF-IDF vectorizer object
+tfidf_vectorizer=TfidfVectorizer(lowercase= True, max_features=1000, stop_words=ENGLISH_STOP_WORDS)
+
+# fit the object with the training data tweets
+tfidf_vectorizer.fit(df_train.tweet)
