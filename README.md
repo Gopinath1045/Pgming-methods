@@ -26,3 +26,6 @@ from sklearn.linear_model import LinearRegression regression=LinearRegression() 
 
 CONFUSION MATRIX
 from sklearn.metrics import confusion_matrix cf = confusion_matrix(y_test, y_pred) plt.figure() sns.heatmap(cf, annot=True) plt.xlabel('Prediction') plt.ylabel('Target') plt.title('Confusion Matrix')
+
+REPLECE TO INT VALUES
+df['Fuel_Type']=df['Fuel_Type'].map({'Petrol':0,'Diesel':1,'CNG':2})
