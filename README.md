@@ -36,3 +36,7 @@ tfidf_vectorizer=TfidfVectorizer(lowercase= True, max_features=1000, stop_words=
 
 # fit the object with the training data tweets
 tfidf_vectorizer.fit(df_train.tweet)
+
+# transform the train and test data
+df_train_idf = tfidf_vectorizer.transform(df_train.tweet)
+df_test_idf  = tfidf_vectorizer.transform(df_test.tweet)
