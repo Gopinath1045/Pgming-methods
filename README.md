@@ -40,3 +40,8 @@ tfidf_vectorizer.fit(df_train.tweet)
 # transform the train and test data
 df_train_idf = tfidf_vectorizer.transform(df_train.tweet)
 df_test_idf  = tfidf_vectorizer.transform(df_test.tweet)
+
+Label encoder to convert classification into multiass binary
+from sklearn.preprocessing import LabelEncoder
+label_encoder = LabelEncoder()
+y = label_encoder.fit_transform(y)
