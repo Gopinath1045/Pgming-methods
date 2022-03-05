@@ -51,3 +51,11 @@ df_final['Airline']=labelencoder.fit_transform(df_final['Airline'])
 df_final['Source']=labelencoder.fit_transform(df_final['Source'])
 df_final['Destination']=labelencoder.fit_transform(df_final['Destination'])
 df_final['Additional_Info']=labelencoder.fit_transform(df_final['Additional_Info'])
+
+
+# Saving model to disk
+pickle.dump(regressor, open('model.pkl','wb'))
+
+# Loading model to compare the results
+model = pickle.load(open('model.pkl','rb'))
+print(model.predict([[2, 10, 10]]))
