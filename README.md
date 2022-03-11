@@ -71,3 +71,9 @@ pickle.dump(regressor, open('model.pkl','wb'))
 # Loading model to compare the results
 model = pickle.load(open('model.pkl','rb'))
 print(model.predict([[2, 10, 10]]))
+
+
+pred=pd.DataFrame(y_pred,columns=['Transported'])
+sub_df=pd.read_csv('../input/spaceship-titanic/sample_submission.csv')
+sub=sub_df.drop(['Transported'],axis=1)
+sub_final=pd.concat([sub,pred], axis=1)
